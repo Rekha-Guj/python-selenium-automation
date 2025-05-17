@@ -26,6 +26,8 @@ sleep(4)
 # click search button
 driver.find_element(By.NAME, 'btnK').click()
 
+sleep(20)
+
 # verify search results
 assert 'car'.lower() in driver.current_url.lower(), f"Expected query not in {driver.current_url.lower()}"
 print('Test Passed')
