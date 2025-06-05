@@ -23,7 +23,10 @@ print(f"{actual_text} is present")
 driver.find_element(By.XPATH, "//button[@class='styles_ndsBaseButton__W8Gl7 styles_lg___H2IL styles_lgGap__bPB7P styles_fullWidth__3XX6f styles_ndsButton__XOOOH styles_lg__T5sAi styles_filleddefault__7QnWt']").click()
 driver.find_element(By.XPATH, "//input[@id='username']").send_keys("rgujalwar@gmail.com")
 sleep(2)
-driver.find_element(By.XPATH, "//form//button[@id='login' and @type='submit' and contains(text(), 'Continue')]").click()
+#driver.find_element(By.XPATH, "//form//button[@id='login' and @type='submit' and contains(text(), 'Continue')]").click()
+
+driver.find_element(By.XPATH, "//button[@id='login']").click()
+
 
 driver.get("https://www.target.com/")
 driver.find_element(By.XPATH,"//input[@id='search']").send_keys("chocolates")
@@ -55,5 +58,5 @@ print("Test is Passed")
 # assert expected_text in actual_text, f"error, expected {expected_text}, not in {actual_text}"
 # print("Test Case Passed")
 #
-# driver.close()
-# driver.quit()
+driver.close()
+driver.quit()
