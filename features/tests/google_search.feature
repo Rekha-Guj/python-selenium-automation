@@ -1,3 +1,5 @@
+# HW_1
+
 Feature: Test Scenarios for Search functionality
 
   Scenario: User can search for a product

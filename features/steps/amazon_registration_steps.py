@@ -2,6 +2,8 @@ from time import sleep
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 
+# HW_3
+
 @given('Open Amazon account creation page')
 def amazon_account(context):
     context.driver.get('https://www.amazon.com/gp/css/homepage.html?ref_=nav_AccountFlyout_ya')

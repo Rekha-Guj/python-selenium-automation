@@ -1,9 +1,7 @@
+# HW_2
+
 from behave import *
 from selenium.webdriver.common.by import By
-
-@given('Open target app main page')
-def open_mainpage(context):
-    context.driver.get('https://www.target.com/')
 
 @when('Clicked on Sign In')
 def click_on_sign_in(context):

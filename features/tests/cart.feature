@@ -1,6 +1,6 @@
-# Created by rekhagujalwar at 6/5/25 ---> HW_3
-Feature: target shopping cart
-  # verifying if the shopping cart is empty
+# Created by rekhagujalwar at 6/9/25
+Feature: Cart Tests
+  # Enter feature description here
 
   Scenario: Target shopping cart verification
     Given Open target main page
