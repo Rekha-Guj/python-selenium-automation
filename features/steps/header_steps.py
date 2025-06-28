@@ -8,7 +8,8 @@ ALL_LINKS = (By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
 @when('Clicked on Shopping cart icon')
 def shopping_cart(context):
     #context.driver.find_element(By.XPATH, "//a[@aria-label='cart 0 items']").click()
-    context.driver.find_element(*CART_ICON).click()
+    # context.driver.find_element(*CART_ICON).click()
+    context.app.header.shopping_cart()
     sleep(2)
 
 # @then('Verify header has correct amount of links')
