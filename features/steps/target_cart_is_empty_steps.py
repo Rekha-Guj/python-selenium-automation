@@ -15,3 +15,7 @@ def step_impl(context):
     # print("Test Passed")
 
     context.app.header.verify_empty_shopping_cart()
+
+@then('Verify Cart page is open')
+def verify_cart_opened(context):
+    context.app.header.verify_cart_opened()

@@ -10,14 +10,19 @@ class Header(Page):
     CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
     ALL_LINKS = (By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
     SHOPPING_CART_IS_EMPTY_MSG = (By.CSS_SELECTOR, "[data-test='boxEmptyMsg']")
+    cart_empty_text = 'Your cart is empty'
 
     def input_text(self, param, param1):
         pass
 
-    def search_product(self):
-        self.input_text('tea', '*self.SEARCH_FIELD')
+    def search_product(self, search_text):
+        self.input_text(search_text, '*self.SEARCH_FIELD')
         self.click(self.SEARCH_BTN)
         sleep(10)
+
+    def click_cart(self):
+        self.wait_for_element_click(self.CART_ICON)
+        self.wait_for_element(self.CART_ICON)
 
     def shopping_cart(self):
         # context.driver.find_element(By.XPATH, "//a[@aria-label='cart 0 items']").click()
@@ -25,8 +30,10 @@ class Header(Page):
         sleep(2)
 
     def verify_empty_shopping_cart(self):
-        expected_text2 = 'Your cart is empty'
-        actual_text2 = self.find_element(*self.SHOPPING_CART_IS_EMPTY_MSG).text
-        assert expected_text2 in actual_text2, f'error, expected {expected_text2}, not in {actual_text2}'
-        sleep(2)
-        print("Test Passed")
+        self.verify_text1(self.cart_empty_text, self.SHOPPING_CART_IS_EMPTY_MSG)
+        print("Verify cart Empty Test Passed")
+
+    def verify_cart_opened(self):
+        self.verify_url('https://www.target.com/cart')
+        print("Cart Opened Test Passed")
+

@@ -6,3 +6,4 @@ Feature: target shopping cart
     Given Open target main page
     When Clicked on Shopping cart icon
     Then Verify that the shopping cart is empty
+    Then Verify Cart page is open
